@@ -7,6 +7,7 @@ import Loader from '../components/Loader'
 import { listProducts } from '../actions/productActions'
 
 const HomeScreen = () => {
+  // useDispatch hook allows us to dispatch actions
   const dispatch = useDispatch()
 
   // useSelector hook gets data from state
