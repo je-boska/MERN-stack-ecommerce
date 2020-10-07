@@ -9,6 +9,7 @@ import { listProducts } from '../actions/productActions'
 const HomeScreen = () => {
   const dispatch = useDispatch()
 
+  // useSelector hook gets data from state
   const productList = useSelector(state => state.productList)
   const { loading, error, products } = productList
 
@@ -22,7 +23,7 @@ const HomeScreen = () => {
       {loading ? (
         <Loader />
       ) : error ? (
-        <Message variant='danger'>{error}</Message>
+        <Message variant='danger'></Message>
       ) : (
         <Row>
           {products.map(product => (
