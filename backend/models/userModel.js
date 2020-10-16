@@ -32,13 +32,13 @@ userSchema.methods.matchPassword = async function (enteredPassword) {
 }
 
 // middleware for hashing password on create user
-userSchema.pre('save', async function(next) {
+userSchema.pre('save', async function (next) {
   /*
   check to see if password is sent or modified
   this way, password won't be re-hashed on profile update where
   only unrelated fields are modified
   */
-  if(!this.isModified('password')) {
+  if (!this.isModified('password')) {
     next()
   }
 
