@@ -59,6 +59,7 @@ const Rating = ({ value, text, color }) => {
               : 'far fa-star'
           }></i>
       </span>
+      <br></br>
       <span>{text && text}</span>
     </div>
   )
