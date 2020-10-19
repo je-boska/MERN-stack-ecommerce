@@ -13,6 +13,7 @@ import {
 } from 'react-bootstrap'
 import Rating from '../components/Rating'
 import Loader from '../components/Loader'
+import Meta from '../components/Meta'
 import {
   listProductDetails,
   createProductReview,
@@ -73,6 +74,7 @@ const ProductScreen = ({ history, match }) => {
         <Alert variant='danger'>{error}</Alert>
       ) : (
         <>
+          <Meta title={product.name} />
           <Row>
             <Col md={6}>
               <Image src={product.image} alt={product.name} fluid></Image>
