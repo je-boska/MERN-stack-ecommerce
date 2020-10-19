@@ -6,7 +6,9 @@ import Product from '../components/Product'
 import Loader from '../components/Loader'
 import { listProducts } from '../actions/productActions'
 
-const HomeScreen = () => {
+const HomeScreen = ({ match }) => {
+  const keyword = match.params.keyword
+
   // useDispatch hook allows us to dispatch actions
   const dispatch = useDispatch()
 
@@ -15,8 +17,8 @@ const HomeScreen = () => {
   const { loading, error, products } = productList
 
   useEffect(() => {
-    dispatch(listProducts())
-  }, [dispatch])
+    dispatch(listProducts(keyword))
+  }, [dispatch, keyword])
 
   return (
     <>
